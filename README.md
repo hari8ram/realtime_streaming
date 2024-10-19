@@ -1,5 +1,8 @@
 # realtime-streaming
 
+![Proj Flow](https://raw.githubusercontent.com/hari8ram/realtime_streaming/main/streaming_proj/docs/Realtime%20Processing%20Flow.png)
+
+
 **Step 1:** It will have the following 3 sub folders
 
 streaming_proj/docs

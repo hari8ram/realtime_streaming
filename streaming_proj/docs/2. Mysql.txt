@@ -1,0 +1,40 @@
+MYSQL Installation & create table query:
+
+    Installation:
+
+    - brew install mysql@8.0
+    - brew services start mysql@8.0
+    - brew services stop mysql@8.0
+
+    We've installed your MySQL database without a root password. To secure it run:
+        mysql_secure_installation
+
+    MySQL is configured to only allow connections from localhost by default
+
+    To connect run:
+        mysql -u root
+
+    View Users and Authentication Information in MySQL:
+    SELECT user,authentication_string,plugin,host FROM mysql.user;
+
+    Change the Authentication Method for the Root User:
+    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'h0r057f';
+
+    Flush Privileges to Apply Changes:
+    FLUSH PRIVILEGES;
+
+    Create Table for charts_salesbycardtype:
+    CREATE TABLE charts_salesbycardtype (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    batch_no INT NOT NULL,
+    card_type VARCHAR(50) NOT NULL,
+    total_sales DOUBLE NOT NULL,
+    PRIMARY KEY (id));
+
+    Create Table for charts_salesbycountry:
+    CREATE TABLE charts_salesbycountry (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    batch_no INT NOT NULL,
+    country VARCHAR(50) NOT NULL,
+    total_sales DOUBLE NOT NULL,
+    PRIMARY KEY (id));

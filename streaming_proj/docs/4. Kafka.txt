@@ -1,0 +1,32 @@
+Kafka Installation & Topic creation:
+
+    Installation:
+
+    - brew install kafka
+    - brew services start zookeeper
+    - brew services stop kafka
+
+    Useful for verifying that the Kafka broker is running and listening for incoming connections:
+    netstat -an | grep 9092 or 2192(zookeeper)
+
+    Lists all the Kafka topics registered in Zookeeper:
+    kafka-topics --list --zookeeper-server localhost:2192
+
+    Command to create Kafka topic:
+    /opt/homebrew/Cellar/kafka/3.8.0/bin/kafka-topics --create --topic order-events --bootstrap-server localhost:9092
+
+    Describe kafka topic:
+    kafka-topics.sh --describe --topic order-events --bootstrap-server localhost:9092
+
+    List the kafka topics:
+    /opt/homebrew/Cellar/kafka/3.8.0/bin/kafka-topics --list --bootstrap-server localhost:9092
+
+    Deleting the Kafka Topic: 
+    /opt/homebrew/Cellar/kafka/3.8.0/bin/kafka-topics --bootstrap-server localhost:9092 --topic order-events --delete
+
+    Commandline kafka producer:
+    /opt/homebrew/Cellar/kafka/3.8.0/bin/kafka-console-producer --topic order-events --bootstrap-server localhost:9092
+
+    Commandline kafka consumer:
+    /opt/homebrew/Cellar/kafka/3.8.0/bin/kafka-console-consumer --topic order-events --from-beginning --bootstrap-server localhost:9092
+	

@@ -1,0 +1,36 @@
+Superset Installation:
+
+    Install Apache Superset Dependencies:
+    brew install python3.10
+    brew install node
+    brew install redis
+    pip3 install --upgrade pip setuptools wheel
+
+    Install and Setup Virtual Environment:
+    python3.10 -m venv superset-venvr
+    source superset-venvr/bin/activate
+
+    Install Apache Superset:
+    pip3 install apache-superset
+
+    Initialize the Database:
+    superset db upgrade
+
+    Create an admin user for Superset:
+    export FLASK_APP=superset
+    superset fab create-admin (Give username and password)
+
+    Load Example Data (Optional):
+    superset load_examples
+
+    Initialize Superset:
+    superset init
+
+    Start the Redis service, which Superset uses as a message broker:
+    brew services start redis
+
+    Finally, you can run Superset's web server:
+    superset run -p 8088 --with-threads --reload --debugger
+
+    Access Superset:
+    Open your browser and go to http://localhost:8088. You should be able to log in with the admin credentials you created earlier

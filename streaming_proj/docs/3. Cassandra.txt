@@ -1,0 +1,32 @@
+Cassandra Installation & create table query:
+
+    Installation:
+
+    - brew install cassandra
+    - brew services start cassandra
+    - brew services stop cassandra
+
+    Check Cassandra Node Status:
+    nodetool status
+
+    Access Cassandra Command Line (cqlsh):
+    cqlsh
+
+    Create a Keyspace in Cassandra:
+    CREATE KEYSPACE sales_ks 
+    WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
+    Use the Created Keyspace:
+    use sales_ks;
+
+    Create table for ecom_orders:
+    CREATE TABLE sales_ks.ecom_orders (
+    order_id text PRIMARY KEY,
+    order_amount text,
+    order_card_type text,
+    order_city_name text,
+    order_country_name text,
+    order_datetime text,
+    order_ecommerce_website_name text,
+    order_product_name text,
+    timestamp timestamp)
